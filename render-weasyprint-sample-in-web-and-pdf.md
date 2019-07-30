@@ -1,6 +1,6 @@
-# Render WeasyPrint Ticket Sample in Web & PDF and Write to PDF (Part 1)
+# Render WeasyPrint Ticket Sample on Web & PDF and Write to PDF (Part 1)
 
-## What is WeasyPrint and What I am going to do?
+## What is WeasyPrint?
 WeasyPrint is a python library which helps developers build beautiful PDF reports using HTML/CSS knowledge. You can
 generate PDF file directly or render the PDF on web page using Flask. In this article I will show you how to use WeasyPrint
     
@@ -9,21 +9,32 @@ generate PDF file directly or render the PDF on web page using Flask. In this ar
     - Write to PDF
 
 # My Story 
-Last couple of months, I was working on a project that parses JSON input source and build PDF report(14 Pages). I did research on jsPDF, ReportLab and pyPDF(I am a Full Stack Dev and have Java/Python/JS background, it really doesn't matter which technology to use, the key point is the tool is easy to learn and can build nice report). I experienced each of them at least one week and built a tiny mockup with each of the technology, as I didn't have too much experience on them, the learning curve was high and I couldn't build beautiful report in a short time. Each of them has their own rules and it takes time to get used to. The report I built contains graphs and tables, those two elements increase the difficulties to build report using the mentioned tools.
+Several months ago I got a project which requires parsing data and writes analysed data into a PDF report. Back to then I have no experience on how to build PDF file, then I did research online and found a couple of potential popular technologies: jsPDF, ReportLab and pyPDF. As I have experience on multiple languages and also I can choose tech stack, it doesn't matter which certain technology to use but the report must be done in 3 months.
 
-The project was urgent and I need a tool which can build gorges report in a short time(a month or two). Finally I found WeasyPrint which heavily based on HTML/CSS which mean no new rules to learn and if you can mockup the report using HTML/CSS and it can be generated the PDF version.
 
+It took me about two weeks to experience those technologies. The data parsing consumes a lot of time and there are more than 20 graphs need to be generated and inserted into report, therefore I give up on jsPDF as it is a client side tool. 
+
+One of the mockups I built:
+![alt text](./images/mockup.png)
+
+I tried ReportLab and pyPDF2. Each of them has their own rules and it takes time to get used to and I wasn't satisfied with the result I had built.
+
+I kept doing my research and finally found WeasyPrint and I was impressed on samples, what a beautiful PDF report! I read the documentation it says **WeasyPrint is a free rendering engine for HTML and CSS and you can export it to PDF and it supports the web standards** and then check its GitHub page and check it on StackOverflow which prove it is quite active, at that moment I knew it is what I want to use!
+
+The project was confidential so I will not post the final version preview for now, maybe later when it is available on the market.
 
 # Steps to render in Web page and PDF
 ## Installation
 `pip install WeasyPrint` and `pip install Flask-WeasyPrint`
 
+You can go check the installation details here https://weasyprint.readthedocs.io/en/latest/install.html
+
 ## Preview:
 
-### Render Web Page
+### Render as Web Page
 ![alt text](./images/render-weasyprint/render-web-page.png)
 
-### Render PDF 
+### Render as PDF 
 ![alt text](./images/render-weasyprint/render-pdf.png)
 
 ## _Render Web Page & PDF_
@@ -125,6 +136,8 @@ if __name__ == '__main__':
 Run `python pdf_ticket.pdf` will generate a PDF file directly.
 
 ## My thought
-Render HTML content into Web page really helps. It is just like web programming, you can use webtool debug on your CSS and layouts, it is easily to check the margins, paddings and other details and it saves me a lot of time. Once I was happy about the web design, I will generate the PDF report and check how it really looks like.
+Render HTML content as Web page really helps. It is just like web programming, you can use webtool debug on your CSS and layouts, it is easy to check the margins, paddings and other details, you don't need to tweak the layout pixel by pixel and generate PDF again and again, it saves tons of time!
+
+![alt text](./images/ticket-webtool.png)
 
 Hope it helps, happy coding!
