@@ -7,7 +7,8 @@ I have learned in the last a couple of years.
 The plan is to share how to become a Fullstack Developer which will cover topics about Python, Java,
 Javascript/Typescript and some server configurations.
 
-Currently I am sharing why I chose python and the topics would be 
+Currently I am sharing why I chose python and the topics would be
+
     - Anaconda
     - Plotly Charts
     - Type Hints
